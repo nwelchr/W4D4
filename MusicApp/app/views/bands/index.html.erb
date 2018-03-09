@@ -1,0 +1,15 @@
+<h2>Here's the hottest new bands:</h2>
+
+<ul>
+  <% @bands.each do |band| %>
+    <li><a href="<%= band_url(band) %>"><p><%= band.name %></p></a></li>
+    <li><a href="<%= edit_band_url(band) %>"><p>Edit ur band~ name!</p></a></li>
+    <li>
+      <form action="<%= band_url(band) %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="DELETE" />
+        <input type="submit" value="Delete ur band :'(" />
+      </form></li>
+    <br><br>
+  <% end %>
+</ul>

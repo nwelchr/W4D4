@@ -1,0 +1,23 @@
+<br>Your albums's name is: <%= @album.title %>
+<br><br>
+
+<h2>Tracks:</h2>
+
+
+<ul>
+  <% @album.tracks.each do |track| %>
+    <% if track.bonus == true %>
+      <% bonus_status = "Bonus Track" %>
+    <% elsif track.bonus == false %>
+      <% bonus_status = "Regular Track" %>
+    <% end %>
+    <li>Title: <%= track.title %></li>
+    <li>Album: <%= track.album.title %></li>
+    <li>Track Number: <%= track.ord %></li>
+    <li>Bonus?: <%= bonus_status %></li>
+    <li>Lyrics: <%= track.lyrics %></li>
+  <% end %>
+</ul>
+
+<br><br>
+<%= link_to 'WANNA ADD SOME TRAXX?!?! click hurr', new_track_url %>

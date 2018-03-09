@@ -1,0 +1,12 @@
+<br>Your band's name is: <%= @band.name %><br>
+<h2>Here's your band's albums...</h2>
+
+<ul>
+  <% @albums.each do |album| %>
+    <li><%= link_to "#{album.title}", album_url(album) %></li>
+  <% end %>
+</ul>
+
+<br>
+
+<%= link_to 'Load your fav album!!', new_album_url %>

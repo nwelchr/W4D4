@@ -1,0 +1,33 @@
+<!-- create an album page -->
+
+<h1>CHANG IT UP!</h1>
+
+<form action="<%= album_url(@album) %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH">
+  <label>What's your album's title?:
+    <input type="text" name="album[title]" value="<%= @album.title %>" />
+  </label>
+  <br>
+
+  <label>What year was it ~released?~:
+    <input type="text" name="album[year]" value="<%= @album.year %>" />
+  </label>
+  <br>
+
+  <label>Is it a live album? Or studio?
+  <input type="radio" name="album[live]" value="true">Laive!</input>
+  <input type="radio" name="album[live]" value="false">Stoodio</input>
+  </label>
+  <br>
+
+  <label for="band">Which band made that album?
+  <select id="band" name="album[band_id]">
+    <% Band.all.each do |band| %>
+      <option value="<%= band.id %>"><%= band.name %></option>
+    <% end %>
+  </select>
+  <br>
+
+  <input type="submit" value="Hit it!" />
+</form>

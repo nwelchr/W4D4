@@ -1,0 +1,32 @@
+<!-- create a album page -->
+
+<h1>Register your album!</h1>
+
+<form action="<%= albums_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>What's your album's title?:
+    <input type="text" name="album[title]" value="" />
+  </label>
+  <br>
+
+  <label>What year was it ~released?~:
+    <input type="text" name="album[year]" value="" />
+  </label>
+  <br>
+
+  <label>Is it a live album? Or studio?
+  <input type="radio" name="album[live]" value="true">Laive!</input>
+  <input type="radio" name="album[live]" value="false">Stoodio</input>
+  </label>
+  <br>
+
+  <label for="band">Which band made that album?
+  <select id="band" name="album[band_id]">
+    <% Band.all.each do |band| %>
+      <option value="<%= band.id %>"><%= band.name %></option>
+    <% end %>
+  </select>
+  <br>
+
+  <input type="submit" value="Hit it!" />
+</form>

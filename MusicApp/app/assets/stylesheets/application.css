@@ -1,0 +1,96 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+  vertical-align: baseline;
+  background-color: #000000;
+  background-image: url('http://78.media.tumblr.com/90d14bc3c54a3daabd04bc8e61cc295a/tumblr_inline_n258ovpRe81qhwjx8.gif')
+}
+
+ul, li, ol {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #AAAAAA;
+}
+
+a :hover {
+  color: purple;
+}
+
+header {
+  font-family: "Comic Sans MS";
+  color: white;
+  font-size: 50px;
+}
+
+* { font-family: "Comic Sans MS"; }
+
+
+.flex-container {
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left-width: 10px;
+  border-left-color: white;
+  border-right-width: 10px;
+  border-right-color: white;
+  box-sizing: content-box;
+  background-color: #666666;
+  width: 60%;
+  min-height: 300px;
+}
+
+.log_in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.title {
+  display: block;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+nav a, input[type="submit"] {
+  border-radius: 30px;
+  background-color: #999999;
+  padding: 5px;
+  border: 0;
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,36 @@
+<!-- create a album page -->
+
+<h1>Register your track!</h1>
+
+<form action="<%= tracks_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>What's your tracks's title?:
+    <input type="text" name="track[title]" value="" />
+  </label>
+  <br>
+
+  <label>What's the track numer?:
+    <input type="text" name="track[ord]" value="" />
+  </label>
+  <br>
+
+  <label>Is it a bonus track? Or just regular?
+    <input type="radio" name="track[bonus]" value="true">Bonoos!</input>
+    <input type="radio" name="track[bonus]" value="false">Regs :'[</input>
+  </label>
+  <br>
+
+  <label for="album">Which album is this on again?
+  <select id="album" name="track[album_id]">
+    <% Album.all.each do |album| %>
+      <option value="<%= album.id %>"><%= album.title %></option>
+    <% end %>
+  </select>
+  <br>
+
+  <label>Lyrics?? <3
+    <textarea name="track[lyrics]">Enter some lyrics if you'd like!</textarea>
+  </label>
+
+  <input type="submit" value="Hit it!" />
+</form>
